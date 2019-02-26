@@ -1,4 +1,4 @@
-# sports_cards
+﻿# sports_cards
 Sports Portfolio Inc.
 Idea development
  
@@ -12,3 +12,4 @@ As an administrator for the website Mr. Strattan wants to be able to give users 
 The website access will be giving to users with a registered real email address to reduce the possibility of spam, once users start the registration process with their name and email, they will receive an email to complete the registration by entering their password and complete their profile. After registration is complete users have access to his portfolio categorized in groups, so that users can search for keywords that interests them and also send price requests. Examples of such keywords could be but are not limited to player name, year, team, cards manufacturer.
  
 The idea for the website administrator is to have users request a price on available cards, but I think adding an option for the users to send the initial request for a price with an offer would reduce the amount of work for the administration of the website, and only if the offer is not enough a counter-offer would be sent. Possibly add a shopping cart and give cards a buy it now price would also ease the buying process, and the administrator would only have to worry with shipping logistics. 
+
