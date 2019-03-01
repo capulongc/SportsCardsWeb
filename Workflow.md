@@ -8,11 +8,11 @@
       - Name should use all lowercase
       - use dash for spaces ex: `html-login-admin`
 3. Done with your ~~branch~~?
-   - After you finishing the task of your feature please delete said branch by using:
+   - After finishing the task of your feature please delete said branch by using:
      - `git branch -D html-login-admin`
 
 ## To commit or not to commit?
 - [x]Commit (**Always commit your changes to your branch**)
 - [ ]Do not commit (**Look above**)
 1. Create a commit by using:
-   -`git commit -m "message that describe the changes you made"`
+   - `git commit -m "message that describe the changes you made"`
