@@ -1,6 +1,6 @@
 # WorkFlow
 
-## Why should i make a branch and what should I name it.
+## Why should i make a branch and what should I name it?
 1. Create a new branch by using:
    - `git checkout -b "insert branch name here"`
 2. For each task in a user story please create a feature branch with a name that describe said feature.
@@ -16,3 +16,18 @@
 - [ ]Do not commit (**Look above**)
 1. Create a commit by using:
    - `git commit -m "message that describe the changes you made"`
+
+## So you finish your task how do get your changes from branch ->master?
+1. **RULE # 1**
+     - Before you attempt to push your changes to the repo please update your code that your teammate might have edited by using:
+       - `git pull origin master`
+2. So after updating your code and your wonderful teammate (Paul) hasn't break anything then **PUSH**:
+   - `git push origin html-login-admin`
+   - Why should I push when i finish my feature?
+     - By pushing to the repo your team is now able to use a pull request to update their code and implement said feature inside their
+       branch. 
+ ## What's this merging thing? ##
+ - **If you are asking this question please refrain from merging**
+ 1. Essentially merge integrate the changes from one branch into another. Think **DBZ fusion**
+    - Example: branch 1 = Goku, branch 2 = Vegeta
+      - `git merge Goku Vegta` = **Vegito**
