@@ -4,7 +4,7 @@
 1. Create a new branch by using:
    - `git checkout -b "insert branch name here"`
 2. For each task in a user story please create a feature branch with a name that describe said feature.
-   -**branch naming rules**:
+   - **branch naming rules**:
       - Name should use all lowercase
       - use dash for spaces ex: `html-login-admin`
 3. Done with your ~~branch~~?
