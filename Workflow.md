@@ -31,3 +31,11 @@
  1. Essentially merge integrate the changes from one branch into another. Think **DBZ fusion**
     - Example: branch 1 = Goku, branch 2 = Vegeta
       - `git merge Goku Vegta` = **Vegito**
+
+ ## Avoiding merge conflicts ##
+ 1. Each team member will be working on a relatively isolated section of code.
+	- This will reduce the amount of merge conflicts as the code we write individually won't affect others' as often
+	- This will also allow us to create more focused code.
+ 2. Any member's completed code and updates will be submitted as a pull request.
+	- A non technical member, likely the Project Manager, will review the pull requests, suggest changes, check for conflicts, and merge when possible
+
