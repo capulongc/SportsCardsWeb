@@ -13,3 +13,4 @@ The website access will be giving to users with a registered real email address 
  
 The idea for the website administrator is to have users request a price on available cards, but I think adding an option for the users to send the initial request for a price with an offer would reduce the amount of work for the administration of the website, and only if the offer is not enough a counter-offer would be sent. Possibly add a shopping cart and give cards a buy it now price would also ease the buying process, and the administrator would only have to worry with shipping logistics. 
 
+[danny checking in]
