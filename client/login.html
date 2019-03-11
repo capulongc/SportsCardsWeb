@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body ng-app="directoryApp">
+	<div class="container">
+		<div class="row" ng-controller="ListingsController">
+			<div class="col-md-6">
+				<div class="jumbotron">
+					<h2>Login</h2>
+					<p><input ng-model="newListing.code" placeholder="Username"></p>
+					<p><input ng-model="newListing.name" placeholder="Password"></p>
+					<input type="submit" ng-click="addListing()" style="background-color:aquamarine" value="Login">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/factories/listingFactory.js"></script>
+	<script src="js/controllers/listingController.js"></script>
+</body>
+</html>
