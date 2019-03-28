@@ -33,9 +33,13 @@ exports.update = function (req, res) {
 
   /** TODO **/
   /* Replace the article's properties with the new properties found in req.body */
-  listing.name = req.body.name;
-  listing.code = req.body.code;
-  listing.address = req.body.address;
+  listing.playerName = req.body.playerName;
+  listing.cardYear = req.body.cardYear;
+  listing.teamName = req.body.teamName;
+  listing.cardBrand = req.body.cardBrand; 
+  listing.playerPosition = req.body.playerPosition;
+  listings.sport = req.body.sport; 
+  listings.linkToImage = req.body.linkToImage; 
   listing.updated_at = new Date();
 
   /* Save the article */
@@ -69,7 +73,7 @@ exports.delete = function (req, res) {
 /* Retreive all the directory listings, sorted alphabetically by listing code */
 exports.list = function (req, res) {
   /** TODO **/
-  Listing.find().sort('code').exec(function (err, listings) {
+  Listing.find().sort('playerName').exec(function (err, listings) {
     if (err) {
       res.status(400).send(err);
     } else {
@@ -94,3 +98,7 @@ exports.listingByID = function (req, res, next, id) {
     }
   });
 };
+
+/*
+
+*/
