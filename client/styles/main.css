@@ -1,3 +1,7 @@
+body {
+	background-color: rgb(153, 186, 221);
+}
+
 #searchBar {
   margin: 15px 10px;
 }
