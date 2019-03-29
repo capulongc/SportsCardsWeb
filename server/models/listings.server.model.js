@@ -4,20 +4,14 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var listingSchema = new Schema({
-  name: {
-    type: String, 
-    required: true
-  }, 
-  code: {
-    type: String, 
-    required: true, 
-    unique: true
-  }, 
-  address: String, 
-  coordinates: {
-    latitude: Number, 
-    longitude: Number
-  },
+  playerName: String, 
+  cardYear: String,
+  teamName: String, 
+  cardBrand: String, 
+  playerPosition: String, 
+  sport: String,
+  linkToImage: String, 
+  
   created_at: Date,
   updated_at: Date
 });
