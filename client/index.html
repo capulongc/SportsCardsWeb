@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
-<body ng-app="directoryApp">
+<body>
 	<div class="container">
-		<div class="row">
-			<h1>Collection</h1>
+		<div class="jumbotron text-center">
+			<h1>Strattan Sports Portfolios</h1>
 		</div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link 2</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link 3</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				</li>
+			</ul>
+		</nav>
+
 		<div class="row" ng-controller="ListingsController">
 			<div class="col-md-6">
-				<div class="jumbotron">
+				<div class="container">
 					<h3>Filters</h3>
 					<p><input ng-model="newListing.code" placeholder="Player Name"></p>
-					<select name="Team">
-						<option value="Teams">Teams</option>
-					</select>
-					<select name="Position">
-						<option value="Positions">Positions</option>
-					</select>
-					<select name="Manufacturer">
-						<option value="Manufacturer">Manufacturer</option>
-					</select>
+					<div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							Sport
+						</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="">Football</a>
+							<a class="dropdown-item" href="">Baseball</a>
+							<a class="dropdown-item" href="">Basketball</a>
+						</div>
+					</div>
 					<input type="submit" ng-click="addListing()" style="background-color:cornflowerblue" value="Filter">
 				</div>
 			</div>
