@@ -1,17 +1,20 @@
 /* Import mongoose and define any variables needed to create the schema */
-var mongoose = require('mongoose'), 
+var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
 var listingSchema = new Schema({
-  playerName: String, 
+  playerName: String,
   cardYear: String,
-  teamName: String, 
+  teamName: String,
   cardBrand: String, 
-  playerPosition: String, 
+  playerPosition: String,
   sport: String,
-  linkToImage: String, 
-  
+  linkToFrontImage: String,
+  linkToBackImage: String, 
+  mail: String, 
+  mailToSend: String,
+
   created_at: Date,
   updated_at: Date
 });
