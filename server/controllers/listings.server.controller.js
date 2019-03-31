@@ -38,11 +38,9 @@ exports.update = function (req, res) {
   listing.teamName = req.body.teamName;
   listing.cardBrand = req.body.cardBrand;
   listing.playerPosition = req.body.playerPosition;
-  listings.sport = req.body.sport;
-  listings.linkToFrontImage = req.body.linkToFrontImage;
-  listings.linkToBackImage = req.body.linkToBackImage; 
-  listings.mail = req.body.mail;  
-  listings.mailToSend = req.body.mailToSend; 
+  listing.sport = req.body.sport;
+  listing.linkToFrontImage = req.body.linkToFrontImage;
+  listing.linkToBackImage = req.body.linkToBackImage; 
 
 
   listing.updated_at = new Date();
