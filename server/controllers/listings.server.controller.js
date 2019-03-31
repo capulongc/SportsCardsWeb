@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 /*
   In this file, you should use Mongoose queries in order to retrieve/add/remove/update listings.
-  On an error you should send a 404 status code, as well as the error message. 
+  On an error you should send a 404 status code, as well as the error message.
   On success (aka no error), you should send the listing(s) as JSON in the response.
  */
 
@@ -36,17 +36,22 @@ exports.update = function (req, res) {
   listing.playerName = req.body.playerName;
   listing.cardYear = req.body.cardYear;
   listing.teamName = req.body.teamName;
-  listing.cardBrand = req.body.cardBrand; 
+  listing.cardBrand = req.body.cardBrand;
   listing.playerPosition = req.body.playerPosition;
-  listings.sport = req.body.sport; 
-  listings.linkToImage = req.body.linkToImage; 
+  listings.sport = req.body.sport;
+  listings.linkToFrontImage = req.body.linkToFrontImage;
+  listings.linkToBackImage = req.body.linkToBackImage; 
+  listings.mail = req.body.mail;  
+  listings.mailToSend = req.body.mailToSend; 
+
+
   listing.updated_at = new Date();
 
   /* Save the article */
   listing.save(function (err) {
     if (err) {
       console.log(err);
-      res.status(400).send(err); 
+      res.status(400).send(err);
     } else {
       res.json(listing);
     }
@@ -82,10 +87,10 @@ exports.list = function (req, res) {
   });
 };
 
-/* 
-  Middleware: find a listing by its ID, then pass it to the next request handler. 
-  HINT: Find the listing using a mongoose query, 
-        bind it to the request object as the property 'listing', 
+/*
+  Middleware: find a listing by its ID, then pass it to the next request handler.
+  HINT: Find the listing using a mongoose query,
+        bind it to the request object as the property 'listing',
         then finally call next
  */
 exports.listingByID = function (req, res, next, id) {
