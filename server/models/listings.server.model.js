@@ -12,8 +12,6 @@ var listingSchema = new Schema({
   sport: String,
   linkToFrontImage: String,
   linkToBackImage: String, 
-  mail: String, 
-  mailToSend: String,
 
   created_at: Date,
   updated_at: Date
