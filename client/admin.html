@@ -11,7 +11,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
-<body>
+<body ng-app="directoryApp">
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<ul class="navbar-nav">
@@ -35,16 +35,17 @@
 						<th>Back</th>
 						<th>Info</th>
 					</tr>
-					<tr ng-repeat="listing in listings" ng-click="showDetails(listing)">
-						<td><img src="https://img.deanscards.com/thirdparty/2988313f.jpg"></td>
-						<td><img src="https://img.deanscards.com/thirdparty/2988313b.jpg"></td>
+					<tr ng-repeat="listing in listings">
+						<td><img src="{{listing.linkToFrontImage}}"></td>
+						<td><img src="{{listing.linkToBackImage}}"></td>
 						<td>
-							<h2>Ken Griffey</h2>
-							<p1>Outfielder</p1>
-							<p1>Cincinnati Reds</p1>
-							<p1>1975</p1>
-							<p1>Topps</p1>
+							<h2>{{listing.playerName}}</h2>
+							<p1>{{listing.playerPosition}}</p1>
+							<p1>{{listing.teamName}}</p1>
+							<p1>{{listing.cardYear}}</p1>
+							<p1>{{listing.cardBrand}}</p1>
 						</td>
+						<td> <button ng-click="deleteListing(listing._id)" class=“btn btn-danger btn-xs”>Remove</button></td>
 					</tr>
 				</table>
 			</div>
@@ -72,12 +73,12 @@
 							</label>
 							<input type="text" class="form-control" readonly>
 						</div>
-						<p><input ng-model="newListing.name" placeholder="Player Name"></p>
-						<select class="form-control" id="sportList" onClick="setOptions()"></select>
-						<select class="form-control" id="teamList"></select>
-						<p><input ng-model="newListing.pos" placeholder="Player Position/Role"></p>
-						<p><input ng-model="newListing.year" placeholder="Card Year"></p>
-						<p><input ng-model="newListing.manufacturer" placeholder="Card Manufacturer"></p>
+						<p><input ng-model="newListing.playerName" placeholder="Player Name"></p>
+						<p><input ng-model="newListing.sport" placeholder="Sport"></p>
+						<p><input ng-model="newListing.teamName" placeholder="Team Name"></p>
+						<p><input ng-model="newListing.playerPosition" placeholder="Player Position/Role"></p>
+						<p><input ng-model="newListing.cardYear" placeholder="Card Year"></p>
+						<p><input ng-model="newListing.cardBrand" placeholder="Card Manufacturer"></p>
 						<div class="checkbox">
 							<label><input type="checkbox" value="">Hall of Fame</label>
 						</div>
