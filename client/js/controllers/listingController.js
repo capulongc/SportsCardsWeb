@@ -11,7 +11,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.addListing = function () {
       Listings.create($scope.newListing).then(function (response) {
-        window.location = '/';
+        window.location = 'admin.html';
       }, function (error) {
         console.log('Failed to add listing:', error);
       });
@@ -20,7 +20,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.deleteListing = function (id) {
       Listings.delete(id).then(function (response) {
-        window.location = '/';
+        window.location = 'admin.html';
       },
         function (error) {
           console.log('Failed to delete listing:', error);
