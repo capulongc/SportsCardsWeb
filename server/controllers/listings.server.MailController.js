@@ -1,6 +1,6 @@
 /* Dependencies */
 var mongoose = require('mongoose'),
-  Listing = require('../models/listings.server.model.js');
+  Listing = require('../models/listings.server.mailModel.js');
 
 /*
   In this file, you should use Mongoose queries in order to retrieve/add/remove/update listings.
@@ -30,17 +30,10 @@ exports.read = function (req, res) {
 /* Update a listing */
 exports.update = function (req, res) {
   var listing = req.listing;
-
   /** TODO **/
   /* Replace the article's properties with the new properties found in req.body */
-  listing.playerName = req.body.playerName;
-  listing.cardYear = req.body.cardYear;
-  listing.teamName = req.body.teamName;
-  listing.cardBrand = req.body.cardBrand;
-  listing.playerPosition = req.body.playerPosition;
-  listing.sport = req.body.sport;
-  listing.linkToFrontImage = req.body.linkToFrontImage;
-  listing.linkToBackImage = req.body.linkToBackImage; 
+  listings.mail = req.body.mail;  
+  listings.mailToSend = req.body.mailToSend; 
 
 
   listing.updated_at = new Date();
@@ -76,7 +69,7 @@ exports.delete = function (req, res) {
 /* Retreive all the directory listings, sorted alphabetically by listing code */
 exports.list = function (req, res) {
   /** TODO **/
-  Listing.find().sort('playerName').exec(function (err, listings) {
+  Listing.find().sort('mailToSend').exec(function (err, listings) {
     if (err) {
       res.status(400).send(err);
     } else {
