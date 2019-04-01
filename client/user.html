@@ -11,7 +11,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
-<body>
+<body ng-app="directoryApp">
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<ul class="navbar-nav">
@@ -70,15 +70,15 @@
 						<th>Back</th>
 						<th>Info</th>
 					</tr>
-					<tr ng-repeat="listing in listings" ng-click="showDetails(listing)">
-						<td><img src="https://img.deanscards.com/thirdparty/2988313f.jpg"></td>
-						<td><img src="https://img.deanscards.com/thirdparty/2988313b.jpg"></td>
+					<tr ng-repeat="listing in listings">
+						<td><img src="{{listing.frontURL}}"></td>
+						<td><img src="{{listing.backURL}}"></td>
 						<td>
-							<h2>Ken Griffey</h2>
-							<p1>Outfielder</p1>
-							<p1>Cincinnati Reds</p1>
-							<p1>1975</p1>
-							<p1>Topps</p1>
+							<h2>{{listing.playerName}}</h2>
+							<p1>{{listing.playerPosition}}</p1>
+							<p1>{{listing.teamName}}</p1>
+							<p1>{{listing.cardYear}}</p1>
+							<p1>{{listing.cardBrand}}</p1>
 						</td>
 					</tr>
 				</table>
