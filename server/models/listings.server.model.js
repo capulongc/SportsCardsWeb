@@ -12,6 +12,8 @@ var listingSchema = new Schema({
   sport: String,
   linkToFrontImage: String,
   linkToBackImage: String, 
+  hallOfFame: String, 
+  floridaGator: String, 
 
   created_at: Date,
   updated_at: Date

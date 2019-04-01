@@ -41,6 +41,8 @@ exports.update = function (req, res) {
   listing.sport = req.body.sport;
   listing.linkToFrontImage = req.body.linkToFrontImage;
   listing.linkToBackImage = req.body.linkToBackImage; 
+  listings.hallOfFame = req.body.hallOfFame;
+  listings.floridaGator = req.body.floridaGator;  
 
 
   listing.updated_at = new Date();
