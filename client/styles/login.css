@@ -10,13 +10,12 @@ html, body {
 	font-family: 'Numans', sans-serif;
 }
 
-.container {
-	height: 100%;
-	align-content: center;
+.center {
+	margin: auto;
 }
 
 .card {
-	height: 370px;
+	height: auto;
 	margin-top: auto;
 	margin-bottom: auto;
 	width: 400px;
@@ -24,6 +23,10 @@ html, body {
 }
 .card-header h3 {
 	color: white;
+}
+
+.btn-primary {
+	width: 250px
 }
 
 .input-group-prepend span {
@@ -38,32 +41,13 @@ input:focus {
 	box-shadow: 0 0 0 0 !important;
 }
 
-.remember {
-	color: white;
-}
-
-	.remember input {
-		width: 20px;
-		height: 20px;
-		margin-left: 15px;
-		margin-right: 5px;
-	}
-
 .login_btn {
 	color: white;
 	background-color: #0021A5;
 	width: 100px;
 }
 
-	.login_btn:hover {
-		color: black;
-		background-color: white;
-	}
-
-.links {
-	color: white;
+.login_btn:hover {
+	color: black;
+	background-color: white;
 }
-
-	.links a {
-		margin-left: 4px;
-	}

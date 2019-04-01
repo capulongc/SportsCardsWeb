@@ -10,10 +10,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.detailedInfo = undefined;
 
     $scope.addListing = function () {
-      /**TODO 
-      *Save the article using the Listings factory. If the object is successfully 
-      saved redirect back to the list page. Otherwise, display the error
-     */
       Listings.create($scope.newListing).then(function (response) {
         window.location = '/';
       }, function (error) {
@@ -23,10 +19,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     };
 
     $scope.deleteListing = function (id) {
-      /**TODO
-         Delete the article using the Listings factory. If the removal is successful, 
-     navigate back to 'listing.list'. Otherwise, display the error. 
-        */
       Listings.delete(id).then(function (response) {
         window.location = '/';
       },

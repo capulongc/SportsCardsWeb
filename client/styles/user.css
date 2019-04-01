@@ -1,0 +1,73 @@
+body {
+	background-color: rgb(153, 186, 221);
+}
+
+select {
+	margin-bottom: 10px;
+}
+
+img {
+	height: 200px;
+	width: 140px;
+	transition: transform 0.25s ease;
+}
+
+img:hover {
+	-webkit-transform: scale(2.5);
+	transform: scale(2.5);
+}
+
+input {
+	margin-bottom:10px;
+}
+
+h2 {
+	font-weight: bold;
+	font-family: 'Montserrat';
+}
+
+p1 {
+	display: block;
+	font-size: 1.1em;
+	font-family: 'Montserrat';
+	margin-top: 0.67em;
+	margin-bottom: 0.67em;
+	margin-left: 1em;
+	margin-right: 0;
+}
+
+label {
+	font-size: 1.1em;
+	font-family: 'Montserrat';
+	color:aliceblue;
+}
+
+nav {
+	margin-bottom:10px;
+}
+
+.card {
+	height: auto;
+	margin-top: auto;
+	margin-bottom: 15px;
+	width: auto;
+	background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-header h3 {
+	color: white;
+}
+
+#searchBar {
+  margin: 15px 10px;
+}
+
+.rightCol {
+	width: 1000px
+}
+
+.tableWrapper {
+  max-height: 400px;
+  overflow: auto;
+}
+
