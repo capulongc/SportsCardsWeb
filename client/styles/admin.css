@@ -1,0 +1,97 @@
+body {
+	background-color: rgb(153, 186, 221);
+}
+
+nav {
+	margin-bottom: 10px;
+}
+img {
+	height: 120px;
+	width: 84px;
+	transition: transform 0.25s ease;
+}
+
+	img:hover {
+		-webkit-transform: scale(3);
+		transform: scale(3);
+	}
+
+h2 {
+	font-size: .9em;
+	font-weight: bold;
+	font-family: 'Montserrat';
+}
+
+select {
+	margin-bottom: 10px;
+}
+
+input {
+	align-content: center;
+	margin: 0px auto;
+}
+label {
+	display: block;
+	font-size: 1.2em;
+	font-family: 'Montserrat';
+	color:white;
+}
+
+span {
+	margin-bottom: 25px;
+}
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+p1 {
+	display: block;
+	font-size: .8em;
+	font-family: 'Montserrat';
+	margin-top: 0.33em;
+	margin-bottom: 0.33em;
+	margin-left: 1em;
+	margin-right: 0;
+}
+
+.card {
+	height: auto;
+	margin-bottom: auto;
+	width: auto;
+	background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-header h3 {
+	color: white;
+}
+
+#searchBar {
+	margin: 15px 10px;
+}
+
+.rightCol {
+	width: 1000px
+}
+
+.tableWrapper {
+	max-height: 400px;
+	overflow: auto;
+}
