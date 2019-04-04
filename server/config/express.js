@@ -11,6 +11,7 @@ const fileRoutes = require('../routes/imageUpload');
 module.exports.init = function() {
   //connect to database
   mongoose.connect(config.db.uri);
+  mongoose.connect(config.mailDB.uri);
 
   //initialize app
   var app = express();

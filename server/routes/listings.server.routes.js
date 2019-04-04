@@ -1,5 +1,6 @@
 /* Dependencies */
-var listings = require('../controllers/listings.server.controller.js'), 
+var listings = require('../controllers/listings.server.controller.js'),
+	mailListings = require('../controllers/listings.server.MailController.js'),
     express = require('express'), 
     router = express.Router();
 
@@ -9,7 +10,9 @@ var listings = require('../controllers/listings.server.controller.js'),
  */
 router.route('/')
   .get(listings.list)
-  .post(listings.create);
+  .post(listings.create)
+  .get(mailListings.list)
+  .post(mailListings.create);
 
 
 /*
@@ -18,7 +21,10 @@ router.route('/')
 router.route('/:listingId')
   .get(listings.read)
   .put(listings.update)
-  .delete(listings.delete);
+  .delete(listings.delete)
+  .get(mailListings.read)
+  .put(mailListings.update)
+  .delete(mailListings.delete);
 
 /*
   The 'router.param' method allows us to specify middleware we would like to use to handle 
@@ -34,5 +40,6 @@ router.route('/:listingId')
   get, update, or delete that specific listing (depending on the HTTP verb specified)
  */
 router.param('listingId', listings.listingByID);
+router.param('mailListingId', mailListings.listingByID);
 
 module.exports = router;
