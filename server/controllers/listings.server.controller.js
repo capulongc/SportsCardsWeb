@@ -39,7 +39,8 @@ exports.update = function (req, res) {
   listing.cardBrand = req.body.cardBrand; 
   listing.playerPosition = req.body.playerPosition;
   listings.sport = req.body.sport; 
-  listings.linkToImage = req.body.linkToImage; 
+  listings.linkToFrontImage = req.body.linkToFrontImage; 
+  listings.linkToBackImage = req.body.linkToImage; 
   listing.updated_at = new Date();
 
   /* Save the article */

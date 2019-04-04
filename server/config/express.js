@@ -6,6 +6,8 @@ var path = require('path'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
 
+const fileRoutes = require('../routes/imageUpload');
+
 module.exports.init = function() {
   //connect to database
   mongoose.connect(config.db.uri);
@@ -27,11 +29,13 @@ module.exports.init = function() {
   Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
 
-  /**TODO 
+  app.use("/api/v1/", fileRoutes);
+
+  /**TODO
   Go to homepage for all routes not specified */ 
   app.all('*', function(req, res) {
-  res.redirect("/login.html");
-});
+    res.redirect("/login.html");
+  });
 
   return app;
 };  

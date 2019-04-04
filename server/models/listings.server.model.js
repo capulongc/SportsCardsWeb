@@ -10,7 +10,8 @@ var listingSchema = new Schema({
   cardBrand: String, 
   playerPosition: String, 
   sport: String,
-  linkToImage: String, 
+  linkToFrontImage: String,
+  linkToBackImage: String,
   
   created_at: Date,
   updated_at: Date
