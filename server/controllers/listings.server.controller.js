@@ -44,7 +44,6 @@ exports.update = function (req, res) {
   listings.hallOfFame = req.body.hallOfFame;
   listings.floridaGator = req.body.floridaGator;  
 
-
   listing.updated_at = new Date();
 
   /* Save the article */

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -55,37 +55,25 @@
 						<h3>Manage Collection</h3>
 					</div>
 					<div class="card-body">
-						<label>Card front image</label>
-						<div class="input-group">
-							<label class="input-group-btn">
-								<span class="btn btn-primary">
-									Browse <input type="file" style="display: none;">
-								</span>
-							</label>
-							<input type="text" class="form-control" readonly>
-						</div>
-						<label>Card back image</label>
-						<div class="input-group">
-							<label class="input-group-btn">
-								<span class="btn btn-primary">
-									Browse <input type="file" style="display: none;">
-								</span>
-							</label>
-							<input type="text" class="form-control" readonly>
-						</div>
-						<p><input ng-model="newListing.playerName" placeholder="Player Name"></p>
-						<p><input ng-model="newListing.sport" placeholder="Sport"></p>
-						<p><input ng-model="newListing.teamName" placeholder="Team Name"></p>
-						<p><input ng-model="newListing.playerPosition" placeholder="Player Position/Role"></p>
-						<p><input ng-model="newListing.cardYear" placeholder="Card Year"></p>
-						<p><input ng-model="newListing.cardBrand" placeholder="Card Manufacturer"></p>
-						<div class="checkbox">
-							<label><input type="checkbox" value="">Hall of Fame</label>
-						</div>
-						<div class="checkbox">
-							<label><input type="checkbox" value="">Florida Gator</label>
-						</div>
-						<input type="submit" ng-click="addListing()" style="background-color:aquamarine" value="Add">
+						<form id="cardUpload" method="post" enctype="multipart/form-data" action="api/v1/upload">
+							<label>Card front image</label>
+							<p><input type="file" accept="image/*" id="cardFront" name='image' /></p>
+							<label>Card back image</label>
+							<p><input type="file" accept="image/*" id="cardBack" name='image' /></p>
+							<p><input ng-model="newListing.playerName" placeholder="Player Name"></p>
+							<p><input ng-model="newListing.sport" placeholder="Sport"></p>
+							<p><input ng-model="newListing.teamName" placeholder="Team Name"></p>
+							<p><input ng-model="newListing.playerPosition" placeholder="Player Position/Role"></p>
+							<p><input ng-model="newListing.cardYear" placeholder="Card Year"></p>
+							<p><input ng-model="newListing.cardBrand" placeholder="Card Manufacturer"></p>
+							<div class="checkbox">
+								<label><input type="checkbox" value="">Hall of Fame</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" value="">Florida Gator</label>
+							</div>
+							<input type="submit" style="background-color:aquamarine" value="Add">
+						</form>
 					</div>
 				</div>
 			</div>
@@ -96,6 +84,5 @@
 	<script src="js/factories/listingFactory.js"></script>
 	<script src="js/controllers/listingController.js"></script>
 	<script src="js/controllers/fileSelect.js"></script>
-	<script src="js/controllers/dropdownController.js"></script>
 </body>
 </html>

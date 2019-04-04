@@ -14,7 +14,6 @@ var listingSchema = new Schema({
   linkToBackImage: String, 
   hallOfFame: String, 
   floridaGator: String, 
-
   created_at: Date,
   updated_at: Date
 });
