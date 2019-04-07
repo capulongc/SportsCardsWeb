@@ -18,7 +18,6 @@ $(function () {
             if (input.length) {
                 input.val(log);
             } else {
-                if (log) alert(log);
             }
 
         });

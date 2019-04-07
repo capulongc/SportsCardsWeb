@@ -29,28 +29,12 @@ exports.read = function (req, res) {
 
 /* Update a listing */
 exports.update = function (req, res) {
-  var listing = req.listing;
-
-  /** TODO **/
-  /* Replace the article's properties with the new properties found in req.body */
-  listing.playerName = req.body.playerName;
-  listing.cardYear = req.body.cardYear;
-  listing.teamName = req.body.teamName;
-  listing.cardBrand = req.body.cardBrand; 
-  listing.playerPosition = req.body.playerPosition;
-  listings.sport = req.body.sport; 
-  listings.linkToFrontImage = req.body.linkToFrontImage; 
-  listings.linkToBackImage = req.body.linkToImage; 
-  listing.updated_at = new Date();
-
-  /* Save the article */
-  listing.save(function (err) {
-    if (err) {
-      console.log(err);
-      res.status(400).send(err); 
-    } else {
-      res.json(listing);
-    }
+    Listing.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, result) {
+      if (err) {
+          console.log(err);
+      }
+      console.log("RESULT: " + result);
+      res.send('Done')
   });
 };
 

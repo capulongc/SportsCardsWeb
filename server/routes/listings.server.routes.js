@@ -8,8 +8,10 @@ var listings = require('../controllers/listings.server.controller.js'),
   Take note that it is possible for different controller functions to handle requests to the same route.
  */
 router.route('/')
-  .get(listings.list)
-  .post(listings.create);
+    .get(listings.list)
+    .post(listings.create)
+    .put(listings.update);
+
 
 
 /*
@@ -17,7 +19,6 @@ router.route('/')
  */
 router.route('/:listingId')
   .get(listings.read)
-  .put(listings.update)
   .delete(listings.delete);
 
 /*

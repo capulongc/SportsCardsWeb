@@ -12,6 +12,49 @@
 </head>
 
 <body ng-app="directoryApp">
+	<div id="errorMessage" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+				<div class="alert alert-danger alert-dismissable">
+					<h4 class="alert-heading">ERROR: Insufficient Information</h4>
+					<p>New listing requires front image, back image, and player name</p>
+				</div>
+		</div>
+	</div>
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Edit Listing</h4>
+				</div>
+				<div class="modal-body">
+					<form id="cardEdit">
+						<label>Card front image</label>
+						<img id="editImgFront">
+						<p><input type="file" accept="image/*" id="editCardFront" name='image' /></p>
+						<label>Card back image</label>
+						<img id="editImgBack">
+						<p><input type="file" accept="image/*" id="editCardBack" name='image' /></p>
+						<p><input id="editPlayerName" ng-model="editListing.playerName" placeholder="Player Name"></p>
+						<p><input id="editSport" ng-model="editListing.sport" placeholder="Sport"></p>
+						<p><input id="editTeamName" ng-model="editListing.teamName" placeholder="Team Name"></p>
+						<p><input id="editPlayerPosition" ng-model="editListing.playerPosition" placeholder="Player Position/Role"></p>
+						<p><input id="editCardYear" ng-model="editListing.cardYear" placeholder="Card Year"></p>
+						<p><input id="editCardBrand" ng-model="editListing.cardBrand" placeholder="Card Manufacturer"></p>
+						<div class="checkbox">
+							<label><input id="editHallOfFame" type="checkbox" ng-model="hallOfFame">Hall of Fame</label>
+						</div>
+						<div class="checkbox">
+							<label><input id="editFloridaGator" type="checkbox" ng-model="floridaGator">Florida Gator</label>
+						</div>
+						<input type="submit" class="btn btn-primary" value="Update">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<ul class="navbar-nav">
@@ -28,14 +71,15 @@
 			</ul>
 		</nav>
 		<div class="row" ng-controller="ListingsController">
-			<div class="col-sm-6">
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Search" ng-model="Search">
 				<table class="table table-dark table-hover">
 					<tr>
 						<th>Front</th>
 						<th>Back</th>
 						<th>Info</th>
 					</tr>
-					<tr ng-repeat="listing in listings">
+					<tr ng-repeat="listing in listings | filter : Search | orderBy: createdAt:true">
 						<td><img src="{{listing.linkToFrontImage}}"></td>
 						<td><img src="{{listing.linkToBackImage}}"></td>
 						<td>
@@ -45,14 +89,15 @@
 							<p1>{{listing.cardYear}}</p1>
 							<p1>{{listing.cardBrand}}</p1>
 						</td>
-						<td> <button ng-click="deleteListing(listing._id)" class=“btn btn-danger btn-xs”>Remove</button></td>
+						<td> <button class="btn btn-info" ng-click="setEdit(listing._id)" data-toggle="modal" data-target="#myModal">Edit</button></td>
+						<td> <button class="btn btn-danger" ng-click="deleteListing(listing._id)">Remove</button></td>
 					</tr>
 				</table>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-3">
 				<div class="card">
 					<div class="card-header">
-						<h3>Manage Collection</h3>
+						<h3>Add New Listing</h3>
 					</div>
 					<div class="card-body">
 						<form id="cardUpload" method="post" enctype="multipart/form-data" action="api/v1/upload">
@@ -60,19 +105,19 @@
 							<p><input type="file" accept="image/*" id="cardFront" name='image' /></p>
 							<label>Card back image</label>
 							<p><input type="file" accept="image/*" id="cardBack" name='image' /></p>
-							<p><input ng-model="newListing.playerName" placeholder="Player Name"></p>
+							<p><input ng-model="newListing.playerName" id="playerName" placeholder="Player Name"></p>
 							<p><input ng-model="newListing.sport" placeholder="Sport"></p>
 							<p><input ng-model="newListing.teamName" placeholder="Team Name"></p>
 							<p><input ng-model="newListing.playerPosition" placeholder="Player Position/Role"></p>
 							<p><input ng-model="newListing.cardYear" placeholder="Card Year"></p>
 							<p><input ng-model="newListing.cardBrand" placeholder="Card Manufacturer"></p>
 							<div class="checkbox">
-								<label><input type="checkbox" value="">Hall of Fame</label>
+								<label><input type="checkbox" ng-model="hallOfFame">Hall of Fame</label>
 							</div>
 							<div class="checkbox">
-								<label><input type="checkbox" value="">Florida Gator</label>
+								<label><input type="checkbox" ng-model="floridaGator">Florida Gator</label>
 							</div>
-							<input type="submit" style="background-color:aquamarine" value="Add">
+							<input type="submit" class="btn btn-primary" value="Add">
 						</form>
 					</div>
 				</div>
