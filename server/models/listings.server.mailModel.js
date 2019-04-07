@@ -3,24 +3,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
-var listingSchema = new Schema({
-  playerName: String,
-  cardYear: String,
-  teamName: String,
-  cardBrand: String, 
-  playerPosition: String,
-  sport: String,
-  linkToFrontImage: String,
-<<<<<<< HEAD
-  linkToBackImage: String,
-  hallOfFame: Boolean,
-  floridaGator: Boolean,
+var listingSchema = new Schema({ 
+  mail: String, 
+  mailToSend: String,
 
-=======
-  linkToBackImage: String, 
-  hallOfFame: String, 
-  floridaGator: String, 
->>>>>>> 758cb9596da31522fd619bb39f034a3d87e6ec92
   created_at: Date,
   updated_at: Date
 });
@@ -37,7 +23,7 @@ listingSchema.pre('save', function(next) {
 });
 
 /* Use your schema to instantiate a Mongoose model */
-var Listing = mongoose.model('Listing', listingSchema);
+var mailListing = mongoose.model('mailListing', listingSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
-module.exports = Listing;
+module.exports = mailListing;
