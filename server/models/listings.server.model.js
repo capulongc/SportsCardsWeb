@@ -4,36 +4,29 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var listingSchema = new Schema({
-  playerName: String,
-  cardYear: String,
-  teamName: String,
-  cardBrand: String, 
-  playerPosition: String,
-  sport: String,
-  linkToFrontImage: String,
-<<<<<<< HEAD
-  linkToBackImage: String,
-  hallOfFame: Boolean,
-  floridaGator: Boolean,
+    playerName: String,
+    cardYear: String,
+    teamName: String,
+    cardBrand: String,
+    playerPosition: String,
+    sport: String,
+    linkToFrontImage: String,
+    linkToBackImage: String,
+    hallOfFame: Boolean,
+    floridaGator: Boolean,
 
-=======
-  linkToBackImage: String, 
-  hallOfFame: String, 
-  floridaGator: String, 
->>>>>>> 758cb9596da31522fd619bb39f034a3d87e6ec92
-  created_at: Date,
-  updated_at: Date
+    created_at: Date,
+    updated_at: Date
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
-listingSchema.pre('save', function(next) {
-  var currentTime = new Date;
-  this.updated_at = currentTime;
-  if(!this.created_at)
-  {
-    this.created_at = currentTime;
-  }
-  next();
+listingSchema.pre('save', function (next) {
+    var currentTime = new Date;
+    this.updated_at = currentTime;
+    if (!this.created_at) {
+        this.created_at = currentTime;
+    }
+    next();
 });
 
 /* Use your schema to instantiate a Mongoose model */

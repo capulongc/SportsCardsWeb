@@ -9,17 +9,11 @@ var listings = require('../controllers/listings.server.controller.js'),
   Take note that it is possible for different controller functions to handle requests to the same route.
  */
 router.route('/')
-<<<<<<< HEAD
     .get(listings.list)
     .post(listings.create)
-    .put(listings.update);
-
-=======
-  .get(listings.list)
-  .post(listings.create)
-  .get(mailListings.list)
-  .post(mailListings.create);
->>>>>>> 758cb9596da31522fd619bb39f034a3d87e6ec92
+    .put(listings.update)
+    .get(mailListings.list)
+    .post(mailListings.create);
 
 
 /*
@@ -27,15 +21,10 @@ router.route('/')
  */
 router.route('/:listingId')
   .get(listings.read)
-<<<<<<< HEAD
-  .delete(listings.delete);
-=======
-  .put(listings.update)
   .delete(listings.delete)
   .get(mailListings.read)
   .put(mailListings.update)
   .delete(mailListings.delete);
->>>>>>> 758cb9596da31522fd619bb39f034a3d87e6ec92
 
 /*
   The 'router.param' method allows us to specify middleware we would like to use to handle 
