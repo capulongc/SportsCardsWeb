@@ -1,0 +1,97 @@
+
+
+
+.modalLogin{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top:0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content{
+  width:500px;
+  height:500px;
+  background-color: white;
+  opacity: 1;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.modal-header{
+  text-align: center!important;
+  display: inline;
+}
+
+.modal-body{
+  text-align: center;
+}
+
+.modal-footer{
+  float: left;
+  display: inline;
+}
+
+.password{
+  display: inline;
+  float:left;
+}
+
+.signUp{
+  display: inline;
+  float:right;
+}
+
+input{
+  width: 50%;
+  display: block;
+  margin: 15px auto;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.close-signUp {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.modalSignUp{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top:0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-header{
+  text-align: center;
+
+}
+
+img {
+	height: 200px;
+	width: 140px;
+	transition: transform 0.25s ease;
+}
+
+img:hover {
+	-webkit-transform: scale(2.5);
+	transform: scale(2.5);
+}
