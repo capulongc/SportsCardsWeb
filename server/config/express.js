@@ -4,14 +4,16 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
+    memberRouter = require('../users/routes'),
     listingsRouter = require('../routes/listings.server.routes');
+
 
 const fileRoutes = require('../routes/imageUpload');
 
-module.exports.init = function() {
-  //connect to database
-  mongoose.connect(config.db.uri);
-  mongoose.connect(config.mailDB.uri);
+module.exports.init = function () {
+    mongoose.Promise = global.Promise;
+    //connect to database
+    var mailDB = mongoose.createConnection(config.mailDB.uri);
 
   //initialize app
   var app = express();
@@ -29,13 +31,13 @@ module.exports.init = function() {
   /**TODO 
   Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
-
+  app.use('/members', memberRouter);
   app.use("/api/v1/", fileRoutes);
 
   /**TODO
   Go to homepage for all routes not specified */ 
   app.all('*', function(req, res) {
-    res.redirect("/login.html");
+    res.redirect("/home.html");
   });
 
   return app;

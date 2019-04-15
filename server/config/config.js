@@ -5,6 +5,9 @@ module.exports = {
   mailDB: {
     uri: 'mongodb://brown3412:software1@ds041581.mlab.com:41581/emailsportscards', //place the URI of your mongo database here.
   },
+  userDB: {
+      uri: 'mongodb://Baseball:banana123@ds135714.mlab.com:35714/sportscardsusers', //place the URI of your mongo database here.
+  },
   port: 8080
 };
 

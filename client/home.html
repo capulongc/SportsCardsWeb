@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -13,107 +13,136 @@
 </head>
 
 <body ng-app="directoryApp">
-  <!-------section for the navagation bar on the top of the website -------->
-  <div class="container">
-      <nav class ="navbar navbar-expand-lg navbar-light bg-light">
-        <a class ="navbar-brand" href="#">Logo</a>
-        <!--The following code is the nav bar ---->
-        <!-----The follow line is a button that toogles when the window collapse (mobile or minimizing the window)-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!----- Left aligned links on the nav bar ----->
-        <ul class = "navbar-nav mr-auto">
-          <li class = "nav-item active">
-            <a class = "nav-link" href="home.html">Home<span class = "sr-only">(current)</span></a>
-          </li>
+	<!------- ERROR MESSAGES -------->
+	<div id="invalidLogin" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="alert alert-danger alert-dismissable">
+				<h4 class="alert-heading">ERROR: Invalid Log-In Credentials</h4>
+				<p>Please confirm that your email and password are both correct and that your account has been verified</p>
+			</div>
+		</div>
+	</div>
+	<div id="errorMessage" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="alert alert-danger alert-dismissable">
+				<h4 class="alert-heading">ERROR:</h4>
+				<p>Passwords do not match!</p>
+			</div>
+		</div>
+	</div>
+	<div id="registerMessage" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="alert alert-success alert-dismissable">
+				<h4 class="alert-heading">Account Successfully Created</h4>
+				<p>Please check your email in order to verify your account</p>
+			</div>
+		</div>
+	</div>
 
-          <li class = "nav-item active">
-            <a class = "nav-link" href="#">About<span class = "sr-only">(current)</span></a>
-          </li>
+	<!-------section for the navagation bar on the top of the website -------->
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Logo</a>
+			<!--The following code is the nav bar ---->
+			<!-----The follow line is a button that toogles when the window collapse (mobile or minimizing the window)-->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!----- Left aligned links on the nav bar ----->
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+				</li>
 
-          <li class = "nav-item active">
-            <a class = "nav-link" href="#">Features<span class = "sr-only">(current)</span></a>
-          </li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+				</li>
 
-          <li class = "nav-item active">
-            <a class = "nav-link" href="user.html">Collection<span class = "sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <!------ Right aligned links on the nav bar ----->
-        <ul class="navbar-nav ml-auto">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          </form>
-          <li class = "nav-item active">
-            <a class = "nav-link" href = "#" id="login" data-toggle="modal" data-target="#modalLogin">Login<span class = "sr-only">(current)</span></a>
-          </li>
-        </ul>
-      </nav>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Features<span class="sr-only">(current)</span></a>
+				</li>
 
-      <div class ="featured" ng-controller="ListingsController">
-        <h1 class = "featured-header">Featured Cards</h1>
-      </div>
-<!------------------------------------------- End of the the nav bar section -------------------------------------------------------------------------------------------------------->
-</div>
+				<li class="nav-item active">
+					<a class="nav-link" href="user.html">Collection<span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<!------ Right aligned links on the nav bar ----->
+			<ul class="navbar-nav ml-auto">
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				</form>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#modalLogin">Login<span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</nav>
 
-<!-------- pop up window for log in ------>
-  <div class = "modalLogin" class ="modal fade" role ="dialog">
-    <div class = "modal-content">
-      <div class = "close">+</div>
+		<div class="featured" ng-controller="ListingsController">
+			<h1 class="featured-header">Featured Cards</h1>
+		</div>
+		<!------------------------------------------- End of the the nav bar section -------------------------------------------------------------------------------------------------------->
+	</div>
 
-        <div class = "modal-header">
-            <h4 class = "Log-header">Log In</h4>
-        </div>
+	<!-------- pop up window for log in ------>
+	<div class="modalLogin" class="modal fade" role="dialog">
+		<div class="modal-content">
+			<div class="close">+</div>
 
-        <div class = modal-body>
-          <form action = "">
-            <input type ="text" placeholder="Email">
-            <input type = "text" placeholder ="Password">
-            <button type="button" class="btn btn-outline-success">Log In</button>
-          </form>
-        </div>
+			<div class="modal-header">
+				<h4 class="Log-header">Log In</h4>
+			</div>
 
-        <div class = modal-footer>
-        <p class = "password">Forgot your password?</p>
-        <a class = "signUp" href = "#" id = "sign-up">Sign Up</a>
-        </div>
-    </div>
-  </div>
+			<div class=modal-body>
+				<form id="userLogin" action="">
+					<input type="text" placeholder="Email" ng-model="login.email">
+					<input type="password" placeholder="Password" ng-model="login.password">
+					<input type="submit" class="btn btn-outline-success" value="Log In">
+				</form>
+				{{loginmessage}}
+			</div>
 
-
-<!---pop up window for sign up ----------------->
-<div class = "modalSignUp" class ="modal fade" role ="dialog">
-  <div class = "modal-content" id = "signUp-Open">
-    <div class = "close-signUp">+</div>
-
-      <div class = "modal-header text-center">
-          <h4 class = "Log-header">Sign Up</h4>
-      </div>
-
-      <div class = modal-body>
-        <form action = "">
-          <input type ="text" placeholder="Email">
-          <input type = "text" placeholder ="Password">
-          <input type = "text" placeholder="Re-enter Password">
-          <button type="button" class="btn btn-outline-success">Submit</button>
-        </form>
-      </div>
-
-      <div class = modal-footer>
-      <p class = "password">Forgot your password?</p>
-      <p class = "signUp"> Sign Up <p>
-      </div>
-  </div>
-</div>
-</div>
+			<div class=modal-footer>
+				<p class="password">Forgot your password?</p>
+				<a class="signUp" href="" id="sign-up">Sign Up</a>
+			</div>
+		</div>
+	</div>
 
 
-<script src="js/controllers/homeController.js"></script>
-<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-<script src="js/app.js"></script>
-<script src="js/factories/listingFactory.js"></script>
-\<script src="js/controllers/listingController.js"></script>
+	<!---pop up window for sign up ----------------->
+	<div class="modalSignUp" class="modal fade" role="dialog">
+		<div class="modal-content" id="signUp-Open">
+			<div class="close-signUp">+</div>
+
+			<div class="modal-header text-center">
+				<h4 class="Log-header">Sign Up</h4>
+			</div>
+
+			<div class=modal-body>
+				<h4>{{registerMessage}}</h4>
+				<form id="userRegister" action="">
+					<input type="text" placeholder="First Name" ng-model="newUser.firstName">
+					<input type="text" placeholder="Last Name" ng-model="newUser.lastName">
+					<input type="text" placeholder="Email" ng-model="newUser.email">
+					<input type="password" placeholder="Password" ng-model="newUser.password">
+					<input type="password" placeholder="Confirm Password" ng-model="newUser.confirmPassword">
+					<button type="submit" class="btn btn-outline-success">Submit</button>
+				</form>
+			</div>
+
+			<div class=modal-footer>
+				<p class="password">Forgot your password?</p>
+				<p class="signUp"> Sign Up <p>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/controllers/homeController.js"></script>
+	<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/factories/listingFactory.js"></script>
+	<script src="js/controllers/listingController.js"></script>
+	<script src="js/controllers/loginController.js"></script>
 
 </body>
 </html>
