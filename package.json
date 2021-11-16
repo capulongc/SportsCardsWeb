@@ -11,7 +11,7 @@
   "dependencies": {
     "async": "^2.6.2",
     "async-waterfall": "^0.1.5",
-    "aws-sdk": "^2.436.0",
+    "aws-sdk": "^2.814.0",
     "bcrypt": "^3.0.5",
     "body-parser": "^1.14.1",
     "crypto": "^1.0.1",
