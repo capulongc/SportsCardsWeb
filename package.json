@@ -9,7 +9,7 @@
     "node": "11.7.0"
   },
   "dependencies": {
-    "async": "^2.6.2",
+    "async": "^2.6.4",
     "async-waterfall": "^0.1.5",
     "aws-sdk": "^2.436.0",
     "bcrypt": "^3.0.5",
